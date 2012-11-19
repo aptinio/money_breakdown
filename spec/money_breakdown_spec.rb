@@ -46,4 +46,9 @@ describe '#MoneyBreakdown' do
     mb = MoneyBreakdown(5.12, [0.01, 0.1, 2, 5])
     assert { mb == { 5 => 1, 0.1 => 1, 0.01 => 2 } }
   end
+
+  xit 'works with weird denominations' do
+    mb = MoneyBreakdown(8,  [1, 2, 4, 5])
+    assert { mb == { 4 => 2 } }
+  end
 end
